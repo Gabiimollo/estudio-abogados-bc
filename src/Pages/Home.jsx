@@ -1,9 +1,9 @@
 import React from 'react'
 import '../styles/home.css'
-import bg from '../assets/home.jpg'
-import profile1 from '../assets/profile_1.png'
-import profile2 from '../assets/profile 2.png'
-import profile3 from '../assets/profile 3.png'
+import bg from '../assets/home.webp'
+import profile1 from '../assets/profile_1.webp'
+import profile2 from '../assets/profile-2.webp'
+import profile3 from '../assets/profile-3.webp'
 
 function Home() {
   return (
@@ -28,7 +28,7 @@ function Home() {
           </div>
         </div>
         <div className="home-hero-right">
-          <img src={bg} alt="home" className="home-hero-img" />
+          <img src={bg} alt="Estudio de abogados" className="home-hero-img" fetchPriority="high" decoding="async" width="1045" height="583" />
         </div>
       </section>
 
@@ -62,7 +62,7 @@ function Home() {
           ].map((p, i) => (
             <div className="team-card" key={i}>
               <div className="team-card-photo">
-                <img src={p.foto} alt={p.nombre} className="team-card-img" />
+                <img src={p.foto} alt={p.nombre} className="team-card-img" loading="lazy" decoding="async" />
               </div>
               <div className="team-card-info">
                 <p className="team-card-name">{p.nombre}</p>

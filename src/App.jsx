@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { lazy, Suspense } from 'react'
 
-// Pages
-import Home from './Pages/Home'
-import NuestraVision from './Pages/NuestraVision'
-import Contacto from './Pages/Contacto'
-import AreaPractica from './Pages/AreaPractica'
+// Pages (lazy: cada página se descarga solo cuando se visita)
+const Home = lazy(() => import('./Pages/Home'))
+const NuestraVision = lazy(() => import('./Pages/NuestraVision'))
+const Contacto = lazy(() => import('./Pages/Contacto'))
+const AreaPractica = lazy(() => import('./Pages/AreaPractica'))
 
 // Components
 import Navbar from './Components/Navbar'
@@ -16,21 +16,20 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 function App() {
 
   return (
-    <>
-      <BrowserRouter>
-        <Navbar />
+    <BrowserRouter>
+      <Navbar />
 
+      <Suspense fallback={null}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/nuestra-vision' element={<NuestraVision />} />
           <Route path='/contacto' element={<Contacto />} />
           <Route path='/area-practica' element={<AreaPractica />} />
         </Routes>
+      </Suspense>
 
-        <Footer />
-      </BrowserRouter>
-
-    </>
+      <Footer />
+    </BrowserRouter>
   )
 }
 

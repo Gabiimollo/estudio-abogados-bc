@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/nuestraVision.css'
-import visionImg from '../assets/nuestra-vision.jpg'
-import equipoImg from '../assets/equipo.png'
+import visionImg from '../assets/nuestra-vision.webp'
+import equipoImg from '../assets/equipo.webp'
 
 const visionImg2 = equipoImg
 
@@ -37,7 +37,7 @@ function NuestraVision() {
         </div>
 
         <div className="vision-right">
-          <img src={visionImg2} alt="Nuestra visión detalle" className="vision-img" />
+          <img src={visionImg2} alt="Nuestra visión detalle" className="vision-img" loading="lazy" decoding="async" width="1600" height="2400" />
         </div>
 
       </div>
