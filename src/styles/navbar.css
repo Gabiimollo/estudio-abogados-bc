@@ -5,9 +5,14 @@
     padding: 0 48px;
     background-color: #000;
     height: 72px;
-    border-bottom: 1px solid rgba(102,67,0,0.2);
-    position: sticky;
+    border-bottom: 1px solid rgba(102,67,0,0.35);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.45);
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
     z-index: 100;
 }
 
@@ -88,6 +93,37 @@
 .nav-whatsapp:hover {
     background: #C9A040;
     color: #000;
+}
+
+/* ── INTERMEDIO (laptops / tablets) ── */
+
+@media (max-width: 1100px) and (min-width: 769px) {
+    .navbar {
+        padding: 0 28px;
+    }
+
+    .nav-left {
+        gap: 10px;
+    }
+
+    .nav-logo {
+        height: 46px;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    .nav-whatsapp {
+        font-size: 13px;
+        letter-spacing: 1px;
+        padding: 7px 14px;
+    }
 }
 
 /* ── HAMBURGUESA (mobile) ── */

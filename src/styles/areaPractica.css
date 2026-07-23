@@ -1,38 +1,28 @@
 .area-practica {
   width: 100%;
-  background: #0d0d0d;
-  height: calc(100vh - 73px);
+  background: #1a1a1a;
+  min-height: calc(100vh - 73px);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   padding-bottom: 32px;
   box-sizing: border-box;
   position: relative;
 }
 
-/* Imagen de fondo agrisada */
-.area-practica::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('../assets/nuestra-vision.webp') center / cover no-repeat;
-  filter: grayscale(100%) brightness(0.35);
-  opacity: 0.45;
-  pointer-events: none;
+/* En pantallas bajas (laptops), las cards necesitan aire mínimo para no cortarse */
+@media (max-height: 760px) and (min-width: 769px) {
+  .area-col {
+    padding-top: 40px;
+  }
 }
 
-.area-header,
-.area-row {
-  position: relative;
-  z-index: 1;
-}
 
 /* ── HEADER ── */
 
 .area-header {
-  background: rgba(17, 17, 17, 0.75);
+  background: #1a1a1a;
   padding: 36px 56px 28px;
-  border-bottom: 1px solid #1a1a1a;
+  border-bottom: 1px solid #2a2a2a;
 }
 
 .area-eyebrow {
@@ -72,25 +62,28 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1px;
-  background: rgba(26, 26, 26, 0.6);
+  background: #2a2a2a;
   flex: 1;
 }
 
 /* ── CARD ── */
 
 .area-col {
-  background: rgba(17, 17, 17, 0.72);
+  background: #1a1a1a;
   padding: 56px 28px 32px;
   border-top: 2px solid transparent;
   transition: border-color 0.2s;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
 }
 
 .area-col:hover {
   border-top-color: #C9A040;
 }
+
 
 .area-col-num {
   margin: 0 0 14px;

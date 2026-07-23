@@ -1,0 +1,97 @@
+.legal {
+  width: 100%;
+  min-height: calc(100vh - 73px);
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.legal-header {
+  padding: 52px 56px 32px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.legal-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.legal-eyebrow-line {
+  width: 24px;
+  height: 1px;
+  background: #C9A040;
+}
+
+.legal-eyebrow-text {
+  font-family: 'Open Sauce One', sans-serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #C9A040;
+}
+
+.legal-title {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #C9A040;
+  letter-spacing: 1px;
+}
+
+.legal-body {
+  max-width: 860px;
+  padding: 44px 56px 72px;
+}
+
+.legal-bloque {
+  margin-bottom: 30px;
+}
+
+.legal-bloque h2 {
+  margin: 0 0 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.legal-bloque p {
+  margin: 0;
+  font-family: 'Open Sauce One', sans-serif;
+  font-size: 16px;
+  color: #bbb;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.legal-nota {
+  margin: 40px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid #2a2a2a;
+  font-family: 'Open Sauce One', sans-serif;
+  font-size: 13px;
+  color: #777;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .legal-header {
+    padding: 40px 24px 28px;
+  }
+
+  .legal-title {
+    font-size: 28px;
+  }
+
+  .legal-body {
+    padding: 32px 24px 56px;
+  }
+
+  .legal-bloque h2 {
+    font-size: 18px;
+  }
+}

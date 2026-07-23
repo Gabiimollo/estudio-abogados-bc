@@ -8,7 +8,11 @@ function Navbar() {
   const navbarRef = useRef(null)
 
   const playMenu = () => setIsMenuOpen((prev) => !prev)
-  const closeMenu = () => setIsMenuOpen(false)
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+    // También sube al top al clickear el link de la página actual
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }
 
   useEffect(() => {
     const handleClickOutside = (event) => {

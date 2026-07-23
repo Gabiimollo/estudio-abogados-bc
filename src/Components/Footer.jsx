@@ -75,9 +75,9 @@ function Footer() {
       <div className="footer-bottom">
         <span>© 2026 Estudio Jurídico Blanco – Colombo &amp; Asociados. Todos los derechos reservados.</span>
         <div className="footer-legal">
-          <a href="#">Política de privacidad</a>
-          <a href="#">Términos de uso</a>
-          <a href="#">Aviso legal</a>
+          <Link to="/politica-de-privacidad">Política de privacidad</Link>
+          <Link to="/terminos">Términos de uso</Link>
+          <Link to="/aviso-legal">Aviso legal</Link>
         </div>
       </div>
     </footer>

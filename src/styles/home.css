@@ -2,8 +2,26 @@ body {
     margin: 0;
 }
 
-html, body, #root {
-    height: 100%;
+/* ── APARICIÓN SUAVE ── */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+    will-change: opacity, transform;
+}
+
+.reveal--in {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 /* ── HERO ── */
@@ -47,29 +65,21 @@ html, body, #root {
 
 .home-hero-title {
     font-family: 'Cinzel', serif;
-    font-size: 38px;
+    font-size: 34px;
     font-weight: 400;
     color: #fff;
-    margin: 0 0 16px;
-    line-height: 1.1;
+    margin: 0 0 24px;
+    line-height: 1.2;
     letter-spacing: 1px;
 }
 
 .home-hero-title strong {
     display: block;
-    font-size: 56px;
+    font-size: 46px;
     font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.home-hero-title-desde {
-    display: block;
-    font-size: 22px;
-    font-weight: 400;
-    letter-spacing: 3px;
-    color: #e0e0e0;
-    margin-top: 4px;
-    margin-bottom: 44px;
+    letter-spacing: 1.5px;
+    color: #C9A040;
+    margin-top: 8px;
 }
 
 .home-hero-location {
@@ -93,7 +103,8 @@ html, body, #root {
     color: #e0e0e0;
     font-weight: 300;
     line-height: 1.6;
-    margin: 0 0 14px;
+    margin: 0 0 34px;
+    text-align: justify;
 }
 
 .home-hero-btns {
@@ -103,7 +114,10 @@ html, body, #root {
 
 .home-hero-btn {
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     text-align: center;
     font-family: 'Open Sauce One', sans-serif;
     font-size: 15px;
@@ -113,7 +127,9 @@ html, body, #root {
     color: #fff;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.4);
-    padding: 12px 20px;
+    width: 52px;
+    height: 52px;
+    padding: 0;
     cursor: pointer;
     transition: border-color 0.2s, color 0.2s;
 }
@@ -150,7 +166,7 @@ html, body, #root {
 /* ── STATS ── */
 
 .home-stats {
-    background: #0a0a0a;
+    background: #1a1a1a;
     border-top: 1px solid rgba(102,67,0,0.15);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -161,7 +177,7 @@ html, body, #root {
     flex-direction: column;
     align-items: center;
     padding: 20px 48px;
-    border-right: 0.5px solid #1a1a1a;
+    border-right: 1px solid rgba(255,255,255,0.08);
 }
 
 .home-stats-cell:last-child {
@@ -187,8 +203,9 @@ html, body, #root {
 /* ── EQUIPO ── */
 
 .home-team {
-    background: #111;
+    background: #1a1a1a;
     padding: 36px 56px 28px;
+    border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 .home-section-header {
@@ -221,7 +238,7 @@ html, body, #root {
 }
 
 .team-card {
-    background: #1a1a1a;
+    background: #222;
     border: 0.5px solid #2a2a2a;
 }
 
@@ -290,8 +307,9 @@ html, body, #root {
 /* ── QUIÉNES SOMOS (resumen) ── */
 
 .home-about {
-    background: #0d0d0d;
+    background: #1a1a1a;
     padding: 48px 56px 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 .home-about-body {
@@ -315,19 +333,20 @@ html, body, #root {
 /* ── POR QUÉ ELEGIRNOS ── */
 
 .home-why {
-    background: #111;
+    background: #1a1a1a;
     padding: 36px 56px 28px;
+    border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 .home-why-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1px;
-    background: #1e1e1e;
+    background: #2e2e2e;
 }
 
 .home-why-cell {
-    background: #111;
+    background: #222;
     padding: 22px 20px;
     display: flex;
     align-items: flex-start;
@@ -353,19 +372,20 @@ html, body, #root {
 /* ── ÁREAS PREVIEW ── */
 
 .home-areas-preview {
-    background: #0d0d0d;
+    background: #1a1a1a;
     padding: 36px 56px 48px;
+    border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 .home-areas-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1px;
-    background: #1e1e1e;
+    background: #2e2e2e;
 }
 
 .home-area-cell {
-    background: #0d0d0d;
+    background: #222;
     padding: 20px 18px;
 }
 
@@ -436,18 +456,33 @@ html, body, #root {
 
     .home-hero-right {
         height: 240px;
+        order: 2;
     }
 
     .home-hero-left {
         padding: 40px 24px;
+        order: 1;
     }
 
     .home-hero-title {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .home-hero-title strong {
-        font-size: 40px;
+        font-size: 34px;
+    }
+
+    .home-hero-sub {
+        font-size: 16px;
+    }
+
+    .home-hero-location-text {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .home-hero-btns {
+        justify-content: center;
     }
 
     /* En mobile la foto queda debajo: difuminado desde arriba */
@@ -464,13 +499,6 @@ html, body, #root {
         grid-template-columns: 1fr;
     }
 
-    .home-hero-sub {
-        font-size: 16px;
-    }
-
-    .home-hero-btns {
-        flex-direction: column;
-    }
 
     /* Stats */
     .home-stats {
@@ -480,7 +508,7 @@ html, body, #root {
     .home-stats-cell {
         padding: 18px 24px;
         border-right: none;
-        border-bottom: 0.5px solid #1a1a1a;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .home-stats-cell:last-child {
@@ -512,6 +540,24 @@ html, body, #root {
 
     .home-areas-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .home-area-cell {
+        padding: 18px 16px;
+    }
+
+    /* Penal ocupa el ancho completo */
+    .home-area-cell:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .home-area-nombre {
+        font-size: 14px;
+    }
+
+    .home-area-desc {
+        font-size: 13px;
+        line-height: 1.55;
     }
 
     /* CTA */

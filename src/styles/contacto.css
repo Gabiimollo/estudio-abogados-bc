@@ -2,9 +2,6 @@ html,
 body,
 #root {
   width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
 }
 
@@ -18,7 +15,7 @@ body,
 .contacto-content {
   display: grid;
   grid-template-columns: 3fr 2fr;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 73px);
 }
 
 /* -------------------------------- */
@@ -26,56 +23,161 @@ body,
 /* -------------------------------- */
 
 .contacto-left {
-  padding: 0 56px;
+  padding: 56px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   border-right: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.contacto-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.contacto-eyebrow-line {
+  width: 24px;
+  height: 1px;
+  background: #C9A040;
+  flex-shrink: 0;
+}
+
+.contacto-eyebrow-text {
+  font-family: 'Open Sauce One', sans-serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #C9A040;
+}
+
+.contacto-titlewrap {
+  width: fit-content;
+}
+
+.contacto-logo {
+  width: 230px;
+  display: block;
+  margin: 0 auto 18px;
+}
+
+.contacto-titlewrap .contacto-eyebrow {
+  margin-bottom: 14px;
 }
 
 .contacto-brand h1 {
-  margin: 0 0 20px;
+  margin: 0 0 14px;
   font-family: 'Cinzel', serif;
-  font-size: 48px;
+  font-size: 46px;
   font-weight: 700;
   line-height: 1;
 }
 
-.contacto-logo {
-  width: 260px;
-  display: block;
-  margin-bottom: 40px;
+.contacto-intro {
+  margin: 0 0 40px;
+  font-family: 'Open Sauce One', sans-serif;
+  font-size: 17px;
+  color: #b0b0b0;
+  line-height: 1.6;
+  max-width: 420px;
 }
 
-/* DIRECCIÓN */
+/* LISTA DE DATOS */
 .contacto-info {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 26px;
+}
+
+.contacto-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contacto-info-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C9A040;
+  border: 1px solid rgba(201, 160, 64, 0.3);
+  border-radius: 50%;
+  background: rgba(201, 160, 64, 0.06);
+}
+
+.contacto-info-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 2px;
 }
 
 .contacto-info-label {
-  margin: 0 0 8px;
   font-family: 'Open Sauce One', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: #C9A040;
   font-weight: 700;
+  margin-bottom: 2px;
 }
 
-.contacto-info p {
-  margin: 0;
+.contacto-info-body a,
+.contacto-info-text {
   font-family: 'Open Sauce One', sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   color: #e0e0e0;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
-.contacto-horario {
-  color: #666 !important;
-  font-size: 16px !important;
-  margin-top: 4px !important;
+.contacto-info-body a {
+  text-decoration: none;
+  transition: color 0.2s;
+  width: fit-content;
+}
+
+.contacto-info-body a:hover {
+  color: #C9A040;
+}
+
+.contacto-info-text {
+  color: #999;
+}
+
+/* DIRECCIÓN + MAPA JUNTOS */
+.contacto-direccion-mapa {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contacto-info-linea {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contacto-mapa {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  line-height: 0;
+  filter: grayscale(35%);
+  /* Alinea el mapa con el texto de la dirección (ancho del ícono + gap) */
+  margin-left: 60px;
+}
+
+.contacto-mapa iframe {
+  display: block;
 }
 
 /* -------------------------------- */
@@ -83,10 +185,10 @@ body,
 /* -------------------------------- */
 
 .contacto-right {
-  padding: 0 56px;
+  padding: 56px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background: #252525;
 }
 
@@ -155,6 +257,57 @@ body,
   padding: 0 14px;
 }
 
+/* SELECT */
+.contacto-form select {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  outline: none;
+  background: #1a1a1a;
+  color: #fff;
+  font-family: 'Open Sauce One', sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  border-radius: 0;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A040' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+.contacto-form select:focus {
+  border-color: rgba(201, 160, 64, 0.5);
+}
+
+/* CONSENTIMIENTO */
+.contacto-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: 'Open Sauce One', sans-serif;
+  font-size: 13px;
+  color: #999;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.contacto-consent input {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: #C9A040;
+  cursor: pointer;
+}
+
+.contacto-consent a {
+  color: #C9A040;
+  text-decoration: underline;
+}
+
 .contacto-form textarea {
   height: 90px;
   padding: 10px 14px;
@@ -171,6 +324,10 @@ body,
   width: 100%;
   height: 46px;
   margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   border: 1px solid #C9A040;
   background: #000;
   color: #fff;
@@ -191,6 +348,55 @@ body,
 .contacto-submit:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+/* DIVISOR "o" */
+.contacto-divisor {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 2px 0;
+}
+
+.contacto-divisor span {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.contacto-divisor p {
+  margin: 0;
+  font-family: 'Open Sauce One', sans-serif;
+  font-size: 13px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* BOTÓN WHATSAPP */
+.contacto-whatsapp {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #C9A040;
+  background: #C9A040;
+  color: #111;
+  font-family: 'Open Sauce One', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.contacto-whatsapp:hover {
+  background: #000;
+  color: #fff;
 }
 
 .contacto-feedback {
@@ -218,20 +424,24 @@ body,
 
 @media (max-width: 900px) {
   .contacto-content {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     min-height: auto;
     width: 100%;
     overflow-x: hidden;
   }
 
-  .contacto-left {
-    padding: 48px 24px 40px;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  /* En mobile primero el formulario, después los datos */
+  .contacto-right {
+    order: 1;
+    padding: 40px 24px 48px;
   }
 
-  .contacto-right {
-    padding: 40px 24px 64px;
+  .contacto-left {
+    order: 2;
+    padding: 48px 24px 64px;
+    border-right: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .contacto-form-row {
