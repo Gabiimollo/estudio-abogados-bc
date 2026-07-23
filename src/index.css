@@ -18,6 +18,28 @@ body {
     font-family: 'Open Sauce One', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
+
+    /* No se puede seleccionar ni copiar texto */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Excepción: los campos del formulario sí permiten selección para poder escribir/editar */
+input,
+textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* Imágenes: no se pueden arrastrar, seleccionar ni guardar con click derecho */
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 ul {
@@ -27,6 +49,34 @@ ul {
 a {
     color: var(--text-color);
     text-decoration: none;
+}
+
+/* ── BARRA DE SCROLL ── */
+
+/* Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #C9A040 #0d0d0d;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0d0d0d;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7a6226;
+    border-radius: 5px;
+    border: 2px solid #0d0d0d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #C9A040;
 }
 
 

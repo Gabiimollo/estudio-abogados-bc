@@ -8,7 +8,8 @@
 .vision-layout {
   display: grid;
   grid-template-columns: 7fr 3fr;
-  min-height: calc(100vh - 72px);
+  height: calc(100vh - 73px);
+  overflow: hidden;
 }
 
 /* ── COLUMNA IZQUIERDA ── */
@@ -20,7 +21,7 @@
 }
 
 .vision-hero {
-  padding: 52px 56px 44px;
+  padding: 28px 56px 14px;
   border-bottom: 1px solid #1a1a1a;
 }
 
@@ -58,16 +59,22 @@
 /* ── TEXTO ── */
 
 .vision-body-left {
-  padding: 52px 56px;
+  padding: 14px 56px 24px;
   flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
 }
 
 .vision-body-left p {
   font-family: 'Open Sauce One', sans-serif;
   font-size: 17px;
   color: #bbb;
-  line-height: 1.85;
-  margin: 0 0 14px;
+  line-height: 1.75;
+  margin: 0 0 12px;
+  text-align: justify;
 }
 
 .vision-body-left p:last-child {
@@ -89,13 +96,154 @@
   display: block;
 }
 
+/* ── SECCIONES: HISTORIA Y EQUIPO ── */
+
+.vision-section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.vision-section-header h2 {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #C9A040;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vision-historia {
+  padding: 52px 56px;
+  border-top: 1px solid #1a1a1a;
+  background: #0d0d0d;
+}
+
+.vision-section-header--centrado {
+  justify-content: center;
+}
+
+.vision-header-line {
+  flex: 1;
+  max-width: 180px;
+  height: 1px;
+  background: #C9A040;
+  opacity: 0.4;
+}
+
+.vision-historia-body {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.vision-historia-body p {
+  text-align: justify;
+}
+
+.vision-historia-body p {
+  font-family: 'Open Sauce One', sans-serif;
+  font-size: 17px;
+  color: #bbb;
+  line-height: 1.85;
+  margin: 0 0 14px;
+}
+
+.vision-historia-body p:last-child {
+  margin-bottom: 0;
+}
+
+.vision-equipo {
+  padding: 52px 56px;
+  border-top: 1px solid #1a1a1a;
+}
+
+.vision-bio {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  gap: 40px;
+  padding: 36px 0;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.vision-bio:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.vision-bio--invertida {
+  direction: rtl;
+}
+
+.vision-bio--invertida > * {
+  direction: ltr;
+}
+
+.vision-bio-foto {
+  overflow: hidden;
+  background: #1a1a1a;
+  align-self: stretch;
+  position: relative;
+}
+
+/* Absoluta: no define el alto de la fila, se adapta al alto del texto */
+.vision-bio-foto img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.vision-bio-texto h3 {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.vision-bio-cargo {
+  margin: 6px 0 0;
+  font-family: 'Open Sauce One', sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #C9A040;
+}
+
+.vision-bio-sep {
+  width: 24px;
+  height: 1px;
+  background: #C9A040;
+  margin: 16px 0 20px;
+}
+
+.vision-bio-texto p:not(.vision-bio-cargo) {
+  font-family: 'Open Sauce One', sans-serif;
+  font-size: 16px;
+  color: #bbb;
+  line-height: 1.85;
+  margin: 0 0 12px;
+  text-align: justify;
+}
+
+.vision-bio-texto p:last-child {
+  margin-bottom: 0;
+}
+
 /* ── RESPONSIVE ── */
 
 @media (max-width: 768px) {
   .vision-layout {
     display: flex;
     flex-direction: column;
-    min-height: auto;
+    height: auto;
+    overflow: visible;
   }
 
   .vision-left {
@@ -129,5 +277,30 @@
 
   .vision-body-left p {
     font-size: 16px;
+  }
+
+  .vision-historia,
+  .vision-equipo {
+    padding: 36px 24px;
+  }
+
+  .vision-section-header h2 {
+    font-size: 20px;
+  }
+
+  .vision-bio {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 28px 0;
+  }
+
+  .vision-bio-foto {
+    max-width: 320px;
+  }
+
+  /* En mobile la foto vuelve al flujo normal (la columna es vertical) */
+  .vision-bio-foto img {
+    position: static;
+    height: auto;
   }
 }

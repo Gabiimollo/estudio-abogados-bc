@@ -45,10 +45,10 @@ function Contacto() {
 
           <div className="contacto-info">
             <p className="contacto-info-label">Nuestra Dirección</p>
-            <p>Tres Cuarto 207 — CP 100 — RIO</p>
-            <p>contacto@estudiob&amp;c.com.ar</p>
-            <p>WhatsApp: +54 9 11 2345-6789</p>
-            <p className="contacto-horario">Lun–Vie 09:00 – 18:00</p>
+            <p>Domingo Faustino Sarmiento 1715, Piso 1 — San Miguel</p>
+            <p>WhatsApp: +54 9 11 5578-6768</p>
+            <p>Atención presencial y virtual</p>
+            <p className="contacto-horario">Lun–Vie 09:00 – 18:00 hs</p>
           </div>
         </div>
 

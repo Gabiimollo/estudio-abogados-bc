@@ -48,14 +48,14 @@ function Navbar() {
         <ul className="nav-links">
           <li><NavLink to="/"               end onClick={closeMenu}>Home</NavLink></li>
           <li><NavLink to="/nuestra-vision"     onClick={closeMenu}>Nuestra Visión</NavLink></li>
-          <li><NavLink to="/area-practica"      onClick={closeMenu}>Área de Práctica</NavLink></li>
+          <li><NavLink to="/area-practica"      onClick={closeMenu}>Áreas de Práctica</NavLink></li>
           <li><NavLink to="/contacto"           onClick={closeMenu}>Contacto</NavLink></li>
         </ul>
       </div>
 
       <div className="nav-right">
         <a
-          href="https://wa.me/5491123456789"
+          href="https://wa.me/5491155786768"
           target="_blank"
           rel="noopener noreferrer"
           className="nav-whatsapp"

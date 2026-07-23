@@ -11,32 +11,9 @@ function Footer() {
         <div className="footer-col footer-col-brand">
           <img src={logo} alt="Logo" className="footer-logo" />
           <p className="footer-tagline">
-            Asesoramiento jurídico integral.<br />
-            Especialistas en Derecho Penal,<br />
-            Civil, Familia y Laboral.
+            Asesoramiento jurídico integral en CABA y Provincia de Buenos Aires.
+            Laboral, Previsional, Civil, Comercial y Penal.
           </p>
-          <div className="footer-socials">
-            <a href="#" className="footer-social-icon" aria-label="Instagram">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A040" strokeWidth="1.5">
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <circle cx="12" cy="12" r="5" />
-                <circle cx="17.5" cy="6.5" r="1" fill="#C9A040" stroke="none" />
-              </svg>
-            </a>
-            <a href="#" className="footer-social-icon" aria-label="LinkedIn">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A040" strokeWidth="1.5">
-                <rect x="2" y="2" width="20" height="20" rx="2" />
-                <line x1="8" y1="11" x2="8" y2="17" />
-                <line x1="8" y1="7" x2="8" y2="8" />
-                <path d="M12 11v6M12 14c0-1.657 1.343-3 3-3s3 1.343 3 3v3" />
-              </svg>
-            </a>
-            <a href="#" className="footer-social-icon" aria-label="WhatsApp">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A040" strokeWidth="1.5">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-              </svg>
-            </a>
-          </div>
         </div>
 
         <div className="footer-col">
@@ -52,11 +29,11 @@ function Footer() {
         <div className="footer-col">
           <h4 className="footer-col-title">Áreas</h4>
           <nav className="footer-nav">
-            <Link to="/area-practica">Penal</Link>
-            <Link to="/area-practica">Civil</Link>
-            <Link to="/area-practica">Familia</Link>
-            <Link to="/area-practica">Contratos</Link>
             <Link to="/area-practica">Laboral</Link>
+            <Link to="/area-practica">Previsional</Link>
+            <Link to="/area-practica">Civil</Link>
+            <Link to="/area-practica">Comercial</Link>
+            <Link to="/area-practica">Penal</Link>
           </nav>
         </div>
 
@@ -68,7 +45,7 @@ function Footer() {
                 <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
-              <span>Tres Cuarto 207 - CP 100 - Río</span>
+              <span>D. F. Sarmiento 1715, Piso 1 — San Miguel</span>
             </div>
             <div className="footer-contact-row">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A040" strokeWidth="1.5" style={{flexShrink:0,marginTop:'2px'}}>
@@ -81,7 +58,7 @@ function Footer() {
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A040" strokeWidth="1.5" style={{flexShrink:0,marginTop:'2px'}}>
                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
               </svg>
-              <span>+54 9 11 2345 6789</span>
+              <span>+54 9 11 5578-6768</span>
             </div>
             <div className="footer-contact-row">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A040" strokeWidth="1.5" style={{flexShrink:0,marginTop:'2px'}}>
@@ -96,7 +73,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span>© 2025 Blanco &amp; Colombo Abogados. Todos los derechos reservados.</span>
+        <span>© 2026 Estudio Jurídico Blanco – Colombo &amp; Asociados. Todos los derechos reservados.</span>
         <div className="footer-legal">
           <a href="#">Política de privacidad</a>
           <a href="#">Términos de uso</a>

@@ -62,13 +62,38 @@ html, body, #root {
     letter-spacing: 2px;
 }
 
+.home-hero-title-desde {
+    display: block;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: #e0e0e0;
+    margin-top: 4px;
+    margin-bottom: 44px;
+}
+
+.home-hero-location {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 34px;
+}
+
+.home-hero-location-text {
+    font-family: 'Open Sauce One', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #e0e0e0;
+}
+
 .home-hero-sub {
     font-family: 'Open Sauce One', sans-serif;
     font-size: 18px;
     color: #e0e0e0;
     font-weight: 300;
     line-height: 1.6;
-    margin: 0 0 28px;
+    margin: 0 0 14px;
 }
 
 .home-hero-btns {
@@ -77,6 +102,9 @@ html, body, #root {
 }
 
 .home-hero-btn {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
     font-family: 'Open Sauce One', sans-serif;
     font-size: 15px;
     font-weight: 700;
@@ -101,11 +129,21 @@ html, body, #root {
     background: #1a1a1a;
 }
 
+/* Difuminado: funde el negro del texto con la foto */
+.home-hero-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #000 0%, rgba(0, 0, 0, 0.55) 18%, transparent 45%);
+    z-index: 1;
+    pointer-events: none;
+}
+
 .home-hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: right center;
+    object-position: center center;
     display: block;
 }
 
@@ -150,7 +188,7 @@ html, body, #root {
 
 .home-team {
     background: #111;
-    padding: 52px 56px;
+    padding: 36px 56px 28px;
 }
 
 .home-section-header {
@@ -240,11 +278,83 @@ html, body, #root {
     line-height: 1.5;
 }
 
+.team-card-desc {
+    margin: 10px 0 0;
+    font-family: 'Open Sauce One', sans-serif;
+    font-size: 13.5px;
+    color: #888;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* ── QUIÉNES SOMOS (resumen) ── */
+
+.home-about {
+    background: #0d0d0d;
+    padding: 48px 56px 24px;
+}
+
+.home-about-body {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.home-about-body p {
+    font-family: 'Open Sauce One', sans-serif;
+    font-size: 16px;
+    color: #bbb;
+    line-height: 1.85;
+    margin: 0 0 14px;
+    text-align: justify;
+}
+
+.home-about-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* ── POR QUÉ ELEGIRNOS ── */
+
+.home-why {
+    background: #111;
+    padding: 36px 56px 28px;
+}
+
+.home-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #1e1e1e;
+}
+
+.home-why-cell {
+    background: #111;
+    padding: 22px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.home-why-num {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #C9A040;
+    line-height: 1.4;
+}
+
+.home-why-cell p {
+    margin: 0;
+    font-family: 'Open Sauce One', sans-serif;
+    font-size: 15px;
+    color: #bbb;
+    line-height: 1.6;
+}
+
 /* ── ÁREAS PREVIEW ── */
 
 .home-areas-preview {
     background: #0d0d0d;
-    padding: 48px 56px;
+    padding: 36px 56px 48px;
 }
 
 .home-areas-grid {
@@ -296,7 +406,7 @@ html, body, #root {
     color: #000;
 }
 
-.home-cta button {
+.home-cta-btn {
     background: #000;
     color: #C9A040;
     font-family: 'Open Sauce One', sans-serif;
@@ -307,9 +417,11 @@ html, body, #root {
     text-transform: uppercase;
     cursor: pointer;
     transition: opacity 0.2s;
+    text-decoration: none;
+    display: inline-block;
 }
 
-.home-cta button:hover {
+.home-cta-btn:hover {
     opacity: 0.8;
 }
 
@@ -336,6 +448,20 @@ html, body, #root {
 
     .home-hero-title strong {
         font-size: 40px;
+    }
+
+    /* En mobile la foto queda debajo: difuminado desde arriba */
+    .home-hero-right::before {
+        background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.45) 20%, transparent 50%);
+    }
+
+    .home-about,
+    .home-why {
+        padding: 40px 24px;
+    }
+
+    .home-why-grid {
+        grid-template-columns: 1fr;
     }
 
     .home-hero-sub {
@@ -396,8 +522,9 @@ html, body, #root {
         text-align: center;
     }
 
-    .home-cta button {
+    .home-cta-btn {
         width: 100%;
         padding: 12px 22px;
+        box-sizing: border-box;
     }
 }

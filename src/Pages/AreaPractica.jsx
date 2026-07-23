@@ -4,29 +4,26 @@ import '../styles/areaPractica.css'
 function AreaPractica() {
   const areas = [
     {
-      titulo: 'PENAL',
-      texto: 'Asesoramiento jurídico Integral. Defensas penales. Patrocinio de querellas. Jurisdicción Federal y Ordinaria.',
+      titulo: 'LABORAL',
+      items: ['Conflictos laborales', 'Despidos', 'Accidentes de trabajo y ART', 'Enfermedades profesionales', 'Asesoramiento a trabajadores y empresas'],
+    },
+    {
+      titulo: 'PREVISIONAL',
+      items: ['Jubilaciones', 'Pensiones', 'Reajustes de haberes', 'Asesoramiento integral previsional'],
     },
     {
       titulo: 'CIVIL',
-      texto: 'Derecho de responsabilidad civil por daños. Accidentes de tránsito. Mala praxis. Derechos personales. Sucesiones. Defensa al consumidor. Derechos Reales.',
+      items: ['Sucesiones', 'Daños y perjuicios', 'Accidentes de tránsito', 'Usucapiones'],
     },
     {
-      titulo: 'FAMILIA',
-      texto: 'Resolución de conflictos en las relaciones familiares. Divorcio. Cuidado Personal de los hijos. Alimentos. Violencia Familiar y de Género.',
+      titulo: 'COMERCIAL',
+      items: ['Asesoramiento contractual', 'Reclamos comerciales', 'Representación empresarial'],
     },
     {
-      titulo: 'CONTRATOS',
-      texto: 'Redacción de Contratos Civiles y Comerciales. Ejecución de contratos. Asesoramiento a empresas y particulares.',
-    },
-    {
-      titulo: 'LABORAL',
-      texto: 'Asesoramiento de empresas y particulares. Registro Laboral. Despidos. Empleo en negro. Accidentes de trabajo.',
+      titulo: 'PENAL',
+      items: ['Defensa penal', 'Asistencia jurídica en procesos penales'],
     },
   ]
-
-  const fila1 = areas.slice(0, 3)
-  const fila2 = areas.slice(3, 5)
 
   return (
     <div className="area-practica">
@@ -40,28 +37,19 @@ function AreaPractica() {
       </div>
 
       <div className="area-row">
-        {fila1.map((area, i) => (
+        {areas.map((area, i) => (
           <div className="area-col" key={i}>
             <p className="area-col-num">0{i + 1}</p>
             <div className="area-col-title">
               <h3>{area.titulo}</h3>
             </div>
-            <p className="area-col-text">{area.texto}</p>
+            <ul className="area-col-list">
+              {area.items.map((item, j) => (
+                <li key={j}>{item}</li>
+              ))}
+            </ul>
           </div>
         ))}
-      </div>
-
-      <div className="area-row area-row-2">
-        {fila2.map((area, i) => (
-          <div className="area-col" key={i}>
-            <p className="area-col-num">0{i + 4}</p>
-            <div className="area-col-title">
-              <h3>{area.titulo}</h3>
-            </div>
-            <p className="area-col-text">{area.texto}</p>
-          </div>
-        ))}
-        <div className="area-col-empty" />
       </div>
 
     </div>

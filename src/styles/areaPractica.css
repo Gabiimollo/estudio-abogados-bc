@@ -1,13 +1,37 @@
 .area-practica {
   width: 100%;
   background: #0d0d0d;
+  height: calc(100vh - 73px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 32px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Imagen de fondo agrisada */
+.area-practica::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../assets/nuestra-vision.webp') center / cover no-repeat;
+  filter: grayscale(100%) brightness(0.35);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.area-header,
+.area-row {
+  position: relative;
+  z-index: 1;
 }
 
 /* ── HEADER ── */
 
 .area-header {
-  background: #111;
-  padding: 72px 56px 56px;
+  background: rgba(17, 17, 17, 0.75);
+  padding: 36px 56px 28px;
   border-bottom: 1px solid #1a1a1a;
 }
 
@@ -46,22 +70,22 @@
 
 .area-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1px;
-  background: #1a1a1a;
-}
-
-.area-row-2 {
-  border-top: 1px solid #1a1a1a;
+  background: rgba(26, 26, 26, 0.6);
+  flex: 1;
 }
 
 /* ── CARD ── */
 
 .area-col {
-  background: #111;
-  padding: 52px 48px;
+  background: rgba(17, 17, 17, 0.72);
+  padding: 56px 28px 32px;
   border-top: 2px solid transparent;
   transition: border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .area-col:hover {
@@ -94,23 +118,38 @@
   color: #C9A040;
 }
 
-.area-col-text {
+.area-col-list {
   margin: 0;
-  font-family: 'Open Sauce One', sans-serif;
-  font-size: 16px;
-  color: #666;
-  line-height: 1.7;
+  padding: 0;
+  list-style: none;
 }
 
-/* ── CELDA VACÍA ── */
+.area-col-list li {
+  font-family: 'Open Sauce One', sans-serif;
+  font-size: 15px;
+  color: #999;
+  line-height: 1.5;
+  padding: 6px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
 
-.area-col-empty {
-  background: #0d0d0d;
+.area-col-list li::before {
+  content: '—';
+  color: #C9A040;
+  flex-shrink: 0;
 }
 
 /* ── RESPONSIVE ── */
 
 @media (max-width: 768px) {
+  .area-practica {
+    height: auto;
+    overflow: visible;
+    display: block;
+  }
+
   .area-header {
     padding: 40px 24px 36px;
   }
@@ -123,10 +162,6 @@
     grid-template-columns: 1fr;
   }
 
-  .area-row-2 {
-    border-top: none;
-  }
-
   .area-col {
     padding: 36px 24px;
   }
@@ -137,9 +172,5 @@
 
   .area-col-title h3 {
     font-size: 18px;
-  }
-
-  .area-col-empty {
-    display: none;
   }
 }
