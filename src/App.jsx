@@ -15,6 +15,9 @@ import WhatsappFlotante from './Components/WhatsappFlotante'
 // Router
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 
+// Vercel Analytics
+import { Analytics } from '@vercel/analytics/react'
+
 // Al cambiar de página, vuelve el scroll al inicio
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -54,6 +57,7 @@ function App() {
 
       <Footer />
       <WhatsappFlotante />
+      <Analytics />
     </BrowserRouter>
   )
 }
