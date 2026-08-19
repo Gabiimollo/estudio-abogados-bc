@@ -17,6 +17,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 
 // Vercel Analytics
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 // Al cambiar de página, vuelve el scroll al inicio
 function ScrollToTop() {
@@ -58,6 +59,7 @@ function App() {
       <Footer />
       <WhatsappFlotante />
       <Analytics />
+      <SpeedInsights />
     </BrowserRouter>
   )
 }
