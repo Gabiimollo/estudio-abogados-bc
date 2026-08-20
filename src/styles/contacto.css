@@ -178,6 +178,8 @@ body,
 
 .contacto-mapa iframe {
   display: block;
+  /* Alto fijo reservado: el iframe es lazy y sin esto empuja el layout (CLS) */
+  height: 220px;
 }
 
 /* -------------------------------- */

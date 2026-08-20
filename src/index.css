@@ -45,6 +45,13 @@ img {
     pointer-events: none;
 }
 
+/* Reserva el alto del contenido de la ruta para evitar saltos (CLS)
+   mientras React descarga el chunk de la página. */
+.page-shell {
+    min-height: calc(100vh - 73px);
+    min-height: calc(100svh - 73px);
+}
+
 ul {
     list-style: none;
 }
@@ -58,6 +65,11 @@ a {
 @media (max-width: 768px) {
     body {
         padding-top: 65px;
+    }
+
+    .page-shell {
+        min-height: calc(100vh - 65px);
+        min-height: calc(100svh - 65px);
     }
 }
 

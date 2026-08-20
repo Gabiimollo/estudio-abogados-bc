@@ -44,17 +44,21 @@ function App() {
       <ScrollToTop />
       <Navbar />
 
-      <Suspense fallback={null}>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/nuestra-vision' element={<NuestraVision />} />
-          <Route path='/contacto' element={<Contacto />} />
-          <Route path='/area-practica' element={<AreaPractica />} />
-          <Route path='/politica-de-privacidad' element={<Legal tipo='privacidad' />} />
-          <Route path='/aviso-legal' element={<Legal tipo='aviso' />} />
-          <Route path='/terminos' element={<Legal tipo='terminos' />} />
-        </Routes>
-      </Suspense>
+      {/* page-shell reserva el alto del viewport mientras carga el chunk de la
+          página (lazy). Sin esto el Footer se pinta arriba y salta => CLS alto. */}
+      <main className="page-shell">
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/nuestra-vision' element={<NuestraVision />} />
+            <Route path='/contacto' element={<Contacto />} />
+            <Route path='/area-practica' element={<AreaPractica />} />
+            <Route path='/politica-de-privacidad' element={<Legal tipo='privacidad' />} />
+            <Route path='/aviso-legal' element={<Legal tipo='aviso' />} />
+            <Route path='/terminos' element={<Legal tipo='terminos' />} />
+          </Routes>
+        </Suspense>
+      </main>
 
       <Footer />
       <WhatsappFlotante />
