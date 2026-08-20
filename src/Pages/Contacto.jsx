@@ -141,8 +141,7 @@ function Contacto() {
                 <select name="tipoConsulta" value={form.tipoConsulta} onChange={handleChange} required>
                   <option value="" disabled>Seleccioná una opción</option>
                   <option value="Consulta general">Consulta general</option>
-                  <option value="Asesoría gratuita">Asesoría gratuita</option>
-                  <option value="Asesoría paga">Asesoría paga</option>
+                  <option value="Asesoría">Asesoría</option>
                 </select>
               </div>
             </div>

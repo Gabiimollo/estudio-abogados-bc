@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/footer.css'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.webp'
 
 function Footer() {
   return (
@@ -9,7 +9,15 @@ function Footer() {
       <div className="footer-grid">
 
         <div className="footer-col footer-col-brand">
-          <img src={logo} alt="Logo" className="footer-logo" />
+          <img
+            src={logo}
+            width="160"
+            height="40"
+            alt="Estudio Jurídico Blanco – Colombo & Asociados"
+            className="footer-logo"
+            loading="lazy"
+            decoding="async"
+          />
           <p className="footer-tagline">
             Asesoramiento jurídico integral en CABA y Provincia de Buenos Aires.
             Laboral, Previsional, Civil, Comercial y Penal.

@@ -20,6 +20,8 @@
 
 .footer-logo {
   width: 160px;
+  height: auto;
+  aspect-ratio: 804 / 200;
   margin-bottom: 14px;
   display: block;
 }

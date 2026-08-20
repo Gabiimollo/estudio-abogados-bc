@@ -180,7 +180,7 @@ function Home() {
           ].map((p, i) => (
             <div className="team-card" key={i}>
               <div className="team-card-photo">
-                <img src={p.foto} alt={p.nombre} className="team-card-img" loading="lazy" decoding="async" />
+                <img src={p.foto} alt={`${p.nombre}, ${p.cargo} — ${p.especialidad}`} className="team-card-img" loading="lazy" decoding="async" />
               </div>
               <div className="team-card-info">
                 <p className="team-card-name">{p.nombre}</p>

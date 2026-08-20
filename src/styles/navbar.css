@@ -27,6 +27,7 @@
 .nav-logo {
     height: 64px;
     width: auto;
+    aspect-ratio: 804 / 200;
     display: block;
 }
 

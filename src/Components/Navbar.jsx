@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import '../styles/navbar.css'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.webp'
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -33,7 +33,15 @@ function Navbar() {
 
       <div className="nav-left">
         <NavLink to="/" onClick={closeMenu}>
-          <img className="nav-logo" src={logo} alt="Blanco & Colombo" />
+          <img
+            className="nav-logo"
+            src={logo}
+            width="257"
+            height="64"
+            alt="Estudio Jurídico Blanco – Colombo & Asociados"
+            fetchPriority="high"
+            decoding="async"
+          />
         </NavLink>
         <button
           className={`nav-menu ${isMenuOpen ? 'nav-menu-open' : ''}`}

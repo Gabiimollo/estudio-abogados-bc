@@ -117,7 +117,7 @@ function NuestraVision() {
         {bios.map((b, i) => (
           <article className={`vision-bio ${i % 2 === 1 ? 'vision-bio--invertida' : ''}`} key={i}>
             <div className="vision-bio-foto">
-              <img src={b.foto} alt={b.nombre} loading="lazy" decoding="async" />
+              <img src={b.foto} alt={`${b.nombre}, ${b.cargo} del estudio jurídico`} loading="lazy" decoding="async" width="800" height="1200" />
             </div>
             <div className="vision-bio-texto">
               <h3>{b.nombre}</h3>
