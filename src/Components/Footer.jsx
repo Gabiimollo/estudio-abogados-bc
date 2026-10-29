@@ -60,7 +60,7 @@ function Footer() {
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                 <polyline points="22,6 12,13 2,6" />
               </svg>
-              <span>123@gmail.com</span>
+              <span>consultas@abogadosblanco.com.ar</span>
             </div>
             <div className="footer-contact-row">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A040" strokeWidth="1.5" style={{flexShrink:0,marginTop:'2px'}}>
