@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import '../styles/contacto.css'
 import { IconoWhatsapp, IconoMail, IconoUbicacion, IconoReloj } from './Home'
 
-const WEBHOOK_URL = 'https://n8n-vv8a.srv2110018.hstgr.cloud/webhook-test/b31aa638-c0a0-418f-b411-39cea2bc94fd'
+const WEBHOOK_URL = 'https://n8n-vv8a.srv2110018.hstgr.cloud/webhook/b31aa638-c0a0-418f-b411-39cea2bc94fd'
 
 const FORM_INICIAL = {
   nombre: '',
